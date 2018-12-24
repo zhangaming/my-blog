@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>测试js</title>
+</head>
+
+<body>
+  <div>123</div>
+</body>
+<script>
+  // 匿名闭包（IIFE模式）
+  // 函数是javaScript的唯一作用域
+  var Module = (function (window, document) {
+    var PRIVATE = `private variable`;
+    var func = function (name) {
+      console.log(PRIVATE)
+      console.log("name", name)
+      obj.objA();
+      obj.objB();
+      main.init();
+    }
+    var obj = {//简单封装函数
+      objA: function () {
+        console.log("objA")
+      },
+      objB: function () {
+        console.log("objB")
+      }
+    }
+    function Main() { //构造函数
+      this.name = "主要名字"
+      this.age = "main age"
+    }
+    Main.prototype = {
+      init: function () {
+        console.log("初始化：" + this.name + " 0 ")
+        this.run();
+      },
+      run: function () {
+        console.log("跑")
+      }
+    }
+
+    var main = new Main();
+    return {
+      func: func
+    }
+  })(window, document);
+
+  Module.func("haha")
+</script>
+<script>
+  //假的
+  var a = 231231.931923
+  var result = parseInt(a).toLocaleString();
+  console.log(result)
+  
+  //过滤 数字千分位
+  function turnNum(num) {
+    const rex = /\d(?=(\d{3})\.)/g
+    return `${num}`.replace(rex, '$1,')
+}
+  console.log(turnNum(a))
+</script>
+
+</html>
