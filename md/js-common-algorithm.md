@@ -34,6 +34,10 @@ let unique = function(arr) {
     }
     return data
 }
+
+let newArr = arr.filter((x, index, self) => self.indexOf(x) === index)
+
+let newArr2 = Array.from(new Set(arr))
 ```
 
 3. 统计字符串中出现最多的字母
