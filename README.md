@@ -1,4 +1,6 @@
 
+## JavaScript设计模式([持续更新](https://github.com/angelasubi/blog/tree/master/design/README.md))
+
 ## JS
 1. [ES5Array](https://github.com/zhangaming/my-blog/blob/master/md/es5-array.md)  
 2. [ES5,6,7新特性](https://github.com/zhangaming/my-blog/blob/master/md/es5-es6-es7.md)  
